@@ -14,7 +14,7 @@ WriteMakefile(
 	INSTALLDIRS         => 'site',
     PREREQ_PM => {
         'Test::More' => 0,
-		'Tkx' => 0,
+	'Tkx' => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
     clean               => { FILES => 'Tkx-ImageButton-*' },

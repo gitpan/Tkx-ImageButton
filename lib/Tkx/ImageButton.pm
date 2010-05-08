@@ -3,7 +3,7 @@ package Tkx::ImageButton;
 use strict;
 use warnings;
 
-our $VERSION = '0.11';
+our $VERSION = '0.12';
 
 use Tkx;
 use base qw(Tkx::widget Tkx::MegaConfig);
@@ -20,6 +20,9 @@ __PACKAGE__->_Config(
     -command       => ['METHOD'],
 );
 
+# Locale variables
+my $tile;
+my $initialized;
 
 #----------------------------------------------------------------------------
 # Method  : _Populate
@@ -28,16 +31,21 @@ __PACKAGE__->_Config(
 #----------------------------------------------------------------------------
 sub _Populate {
     my($class, $widget, $path, %opt) = @_;
-
-    my $self = $class->new($path)->_parent->new_ttk__label(
-        -name  => $path,
-        -class => 'tkx_ImageButton',
-    );
+    my($data);
+    
+    if (!$initialized) {
+        $tile        = eval { Tkx::package_require('tile') };
+        $initialized = 1;
+    }
+    
+    my $self = $tile
+        ? $class->new($path)->_parent->new_ttk__label(-name => $path, -class => 'tkx_ImageButton')
+        : $class->new($path)->_parent->new_label(-name => $path, -class => 'tkx_ImageButton');
 
     $self->_class($class);
 
     # Data
-    my $data = $self->_data();
+    $data = $self->_data();
     $data->{-imagedisplay}  = delete $opt{-imagedisplay};
     $data->{-imageover}     = delete $opt{-imageover};
     $data->{-imageclick}    = delete $opt{-imageclick};
@@ -354,7 +362,7 @@ Tkx::ImageButton - Graphic button megawidget for Tkx
 
 =head1 VERSION
 
-This documentation refers to Tkx::ImageButton version 0.10
+This documentation refers to Tkx::ImageButton version 0.12
 
 
 =head1 SYNOPSYS
