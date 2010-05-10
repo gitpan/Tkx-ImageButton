@@ -3,7 +3,7 @@ package Tkx::ImageButton;
 use strict;
 use warnings;
 
-our $VERSION = '0.12';
+our $VERSION = '0.13';
 
 use Tkx;
 use base qw(Tkx::widget Tkx::MegaConfig);
@@ -30,8 +30,8 @@ my $initialized;
 # Notes   :
 #----------------------------------------------------------------------------
 sub _Populate {
-    my($class, $widget, $path, %opt) = @_;
-    my($data);
+    my ($class, $widget, $path, %opt) = @_;
+    my ($data);
     
     if (!$initialized) {
         $tile        = eval { Tkx::package_require('tile') };
@@ -40,7 +40,7 @@ sub _Populate {
     
     my $self = $tile
         ? $class->new($path)->_parent->new_ttk__label(-name => $path, -class => 'tkx_ImageButton')
-        : $class->new($path)->_parent->new_label(-name => $path, -class => 'tkx_ImageButton');
+        : $class->new($path)->_parent->new_label(-name => $path);
 
     $self->_class($class);
 
@@ -362,7 +362,7 @@ Tkx::ImageButton - Graphic button megawidget for Tkx
 
 =head1 VERSION
 
-This documentation refers to Tkx::ImageButton version 0.12
+This documentation refers to Tkx::ImageButton version 0.13
 
 
 =head1 SYNOPSYS
