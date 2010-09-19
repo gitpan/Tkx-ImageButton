@@ -1,6 +1,6 @@
 --- #YAML:1.0
 name:               Tkx-ImageButton
-version:            0.13
+version:            0.14
 abstract:           Graphic button megawidget for Tkx
 author:
     - Alexander Nusov <cpan@sancode.net>

@@ -1,5 +1,8 @@
 Revision history for Tkx-ImageButton
 
-0.13 17:23 10.05.2010
-    - Fixed support for tile
+0.14    2010-09-19
+        Fixed POD typo.
+
+0.13    2010-05-10
+        Fixed support for tile.
 

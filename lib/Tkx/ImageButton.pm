@@ -3,7 +3,7 @@ package Tkx::ImageButton;
 use strict;
 use warnings;
 
-our $VERSION = '0.13';
+our $VERSION = '0.14';
 
 use Tkx;
 use base qw(Tkx::widget Tkx::MegaConfig);
@@ -362,10 +362,10 @@ Tkx::ImageButton - Graphic button megawidget for Tkx
 
 =head1 VERSION
 
-This documentation refers to Tkx::ImageButton version 0.13
+This documentation refers to Tkx::ImageButton version 0.14
 
 
-=head1 SYNOPSYS
+=head1 SYNOPSIS
 
     use Tkx;
     use Tkx::ImageButton;
@@ -464,7 +464,7 @@ Inspired by Dave Hickling (Tk-ImageButton).
 
 =head1 COPYRIGHTS AND LICENSE
 
-Copyright (C) 2010, Alexander Nusov <cpan at sancode.net>
+Copyright (C) 2010, Alexander Nusov <alexander.nusov+cpan <at> gmail.com>
 
 This library is free software; you can redistribute it and/or modify
 it under the same terms as Perl itself.
